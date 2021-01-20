@@ -1,4 +1,6 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -7,6 +9,12 @@ module.exports = {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
   },
+  plugins: [
+    // new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({ // 会生成自己的 index.html 文件
+      title: "HalfMoon's Webpack."
+    }),
+  ],
   module: {
     rules: [    // loader 引入载入
       {
@@ -23,5 +31,11 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  devServer: {
+    contentBase: './dist',  // 告知 dev server，从什么位置查找文件
+    port: 8080,
+    hot: true
+  },
+  devtool: 'inline-source-map', // 可定位出代码错误位置
 }
