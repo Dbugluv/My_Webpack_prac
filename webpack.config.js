@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
@@ -14,6 +15,7 @@ module.exports = {
     new HtmlWebpackPlugin({ // 会生成自己的 index.html 文件
       title: "HalfMoon's Webpack."
     }),
+    new webpack.HotModuleReplacementPlugin()
   ],
   module: {
     rules: [    // loader 引入载入
