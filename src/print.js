@@ -1,3 +1,3 @@
 export default function print() {
-  console.log('test hmr updating~~~！！!');
+  console.log('test hmr updating~');
 }

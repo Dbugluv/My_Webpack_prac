@@ -15,7 +15,7 @@ module.exports = {
     new HtmlWebpackPlugin({ // 会生成自己的 index.html 文件
       title: "HalfMoon's Webpack."
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(), // 似乎加不加影响不大？
   ],
   module: {
     rules: [    // loader 引入载入
