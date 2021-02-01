@@ -1,5 +1,5 @@
 import './styles.css';
-import Icon from './img.jpg';
+// import Icon from './img.jpg';
 import print from './print';
 
 function component() {
@@ -11,7 +11,7 @@ function component() {
   myIcon.src = Icon;
   ele.appendChild(myIcon);
   var btn = document.createElement('button');
-  btn.innerHTML = '点击这里，查看console.';
+  btn.innerHTML = '点击这里，查看console～';
   btn.onclick = print;
   ele.appendChild(btn);
 
