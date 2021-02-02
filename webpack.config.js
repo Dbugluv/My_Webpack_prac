@@ -13,18 +13,29 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({ // 会生成自己的 index.html 文件
-      title: "HalfMoon's Webpack."
+      title: "HalfMoon's Webpack.",
+      template: 'index.html', //html模板
+      inject: true, // true：默认值，script标签位于html文件的 body 底部
     }),
     new webpack.HotModuleReplacementPlugin(), // 似乎加不加影响不大？
   ],
   module: {
     rules: [    // loader 引入载入
       {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      },
+      {
         test: /\.css$/,
         use: [
           'style-loader',
           'css-loader'
         ]
+      },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /.(png|svg|jpg|gif)$/,

@@ -1,29 +1,16 @@
-import './styles.css';
-// import Icon from './img.jpg';
-import print from './print';
+import App from './views/App'
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-function component() {
-  let ele = document.createElement('div');
-  ele.innerHTML = 'Hello,this is my webpack!';
-  ele.classList.add('hello');
+ReactDOM.render( <App /> , document.getElementById("app"))
 
-  var myIcon = new Image();
-  myIcon.src = Icon;
-  ele.appendChild(myIcon);
-  var btn = document.createElement('button');
-  btn.innerHTML = '点击这里，查看console～';
-  btn.onclick = print;
-  ele.appendChild(btn);
+// 2021/2/2 Q：React 下如何热更新模块？
+// if (module.hot) {
+//   module.hot.accept('./views/App.js', function () { // 只热更新此模块
+//     console.log('热更新 App.js!');
+//     ReactDOM.render( <App /> , document.getElementById("app"))
+//   })
+// }
 
-  return ele;
-}
 
-document.body.appendChild(component());
-
-if (module.hot) {
-  module.hot.accept('./print.js', function () { // 只热更新此模块
-    console.log('Accepting the updated printMe module!');
-    print();
-  })
-}
 
