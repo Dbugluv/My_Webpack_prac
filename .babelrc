@@ -1,9 +1,9 @@
 {
     "presets": [
         [
-            "@babel/preset-env",
+            "@babel/preset-env",    // 包含了 es6、7的所有新特性
             {
-                "modules": false,
+                "modules": false,   // 默认为 CommonJS，false将保留ES模块。
                 "targets": {
                     "browsers": [
                         "> 1%",
@@ -17,10 +17,10 @@
     ],
     "plugins": [
         [
-            "@babel/plugin-transform-runtime",
+            "@babel/plugin-transform-runtime",  // 支持 es6、7 新api、特性。
             {
                 "corejs": 2, // polyfill 需要使用@babel/runtime-corejs2
-                "useBuildIns": "usage", //按需引入,即使用什么新特性打包什么新特性, 可以减小打包的体积
+                "useBuildIns": "usage" //按需引入,即用什么新特性打包什么新特性, 可以减小打包的体积
             }
         ]
     ]

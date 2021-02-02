@@ -50,5 +50,8 @@ module.exports = {
     port: 8080,
     hot: true
   },
+  resolve: {
+    extensions: ['.js', '.json'],   // 解析文件时可接受的扩展名
+  },
   devtool: 'inline-source-map', // 可定位出代码错误位置
 }

@@ -1,6 +1,7 @@
 import App from './views/App'
 import React from 'react'
 import ReactDOM from 'react-dom'
+import 'antd/dist/antd.css'; // 2021/2/2 Q：还有其他方式引入吗？
 
 ReactDOM.render( <App /> , document.getElementById("app"))
 
