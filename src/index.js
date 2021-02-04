@@ -2,8 +2,16 @@ import App from './views/App'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import 'antd/dist/antd.css'; // 2021/2/2 Q：还有其他方式引入吗？
+import { createStore } from 'redux';
+import { Provider } from 'react-redux'
+import counter from './reducers/counter'
+const store = createStore(counter)
 
-ReactDOM.render( <App /> , document.getElementById("app"))
+ReactDOM.render( 
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("app"))
 
 // 2021/2/2 Q：React 下如何热更新模块？
 // if (module.hot) {
