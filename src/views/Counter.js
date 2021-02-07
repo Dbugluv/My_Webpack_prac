@@ -9,22 +9,22 @@ class Counter extends Component {
     super(props);
     this.state = {
       count: 0,
-      showText: '热更新文案'
     }
   }
 
+  
 
   render () {
     const { count } = this.props.stores
 
     return (
       <div className="counter">
-        <p>{this.state.showText}</p>
         <Button onClick={() => this.props.onIncrement(count)}>+</Button>
         <div>
           { count }
         </div>
         <Button onClick={() => this.props.onDecrement(count)}>-</Button>
+        <br />
       </div>
     );
   }
