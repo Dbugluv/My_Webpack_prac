@@ -6,8 +6,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: [
-    'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
-    'webpack-dev-server/client?http://0.0.0.0:5000', // WebpackDevServer host and port
     './src/index.js'
   ],  // 2020/2/2 Q：此路径是以那处作相对路径处理的？
   output: {
@@ -29,7 +27,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loaders: ['babel-loader'],  // react-hot-loader/webpack 似乎作用在此无效，仅在 .babelrc内有效
+        loaders: ['babel-loader'],
       },
       {
         test: /\.css$/,

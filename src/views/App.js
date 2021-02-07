@@ -1,4 +1,3 @@
-import 'react-hot-loader/patch';
 import React, { Component } from 'react'
 import Counter from './Counter'
 import './app.scss'
@@ -6,6 +5,7 @@ import * as counterActions from '../actions/counter'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Button } from 'antd';
+import { hot } from 'react-hot-loader'
 
 class App extends Component {
 
@@ -24,7 +24,7 @@ class App extends Component {
     const {count} = this.props.stores
     return (
       <div className="app">
-        <h1 className="hello"> My React & Webpack practice。</h1>
+        <h1 className="hello"> My React & Webpack practice</h1>
         <p>{this.state.showText}</p>
         <Counter 
           count={count}
@@ -48,8 +48,8 @@ function mapDispatchToProps(dispatch) {
       counterActions: bindActionCreators(counterActions, dispatch),
   };
 }
-
+const HotApp = hot(module)(App);
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App)
+)(HotApp)
