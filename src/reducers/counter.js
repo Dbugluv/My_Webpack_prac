@@ -3,7 +3,6 @@ const initialState = {
 }
 
 export default function Counter(state = initialState, action) {
-  console.log("action", action, 'state', state)
   let newState = state;
   switch(action.type) {
     case 'INCREMENT':

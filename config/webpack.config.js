@@ -5,10 +5,16 @@ const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',  // 2020/2/2 Q：此路径是以那处作相对路径处理的？
+  entry: [
+    // 'react-hot-loader/patch', // RHL patch
+    'webpack-dev-server/client?http://0.0.0.0:5000', // WebpackDevServer host and port
+    'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
+    './src/index.js'
+  ],  // 2020/2/2 Q：此路径是以那处作相对路径处理的？
   output: {
     filename: '[name].[hash].js',
     path: path.resolve(__dirname, '../dist'),
+    publicPath: "/"
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -24,7 +30,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loaders: [ 'babel-loader'],  // react-hot-loader/webpack 确保保留内部组件状态 Q：未加入也能热更新redux，why？
       },
       {
         test: /\.css$/,

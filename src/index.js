@@ -1,25 +1,32 @@
-import App from './views/App'
+// import App from './views/App'
+import Test from './views/Test'
 import React from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css'; // 2021/2/2 Q：还有其他方式引入吗？
 import { createStore } from 'redux';
 import { Provider } from 'react-redux'
-import counter from './reducers/counter'
+import counter from './reducers/counter'  // reducers 
+import { AppContainer } from 'react-hot-loader';  // 实现保留redux 状态的方法
+
 const store = createStore(counter)
 
-ReactDOM.render( 
-  <Provider store={store}>
-    <App />
-  </Provider>,
+const render = Component => ReactDOM.render( 
+  <AppContainer>
+    <Provider store={store}>
+      <Component />
+    </Provider>
+  </AppContainer>
+  ,
   document.getElementById("app"))
 
-// 2021/2/2 Q：React 下如何热更新模块？
-// if (module.hot) {
-//   module.hot.accept('./views/App.js', function () { // 只热更新此模块
-//     console.log('热更新 App.js!');
-//     ReactDOM.render( <App /> , document.getElementById("app"))
-//   })
-// }
+render(Test);
+
+if (module.hot) {
+  module.hot.accept('./views/Test.js', () => { // 对根项目进行热加载
+    const NextRootContainer = require('./views/Test.js').default;
+    render(NextRootContainer);
+  })
+}
 
 
 

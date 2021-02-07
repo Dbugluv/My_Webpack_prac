@@ -5,8 +5,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config config/webpack.config.js",
-    "start": "webpack-dev-server --open --config config/webpack.config.js",
-    "watch": "webpack --watch --config config/webpack.config.js"
+    "dev": "webpack-dev-server --open --config config/webpack.config.js",
+    "watch": "webpack --watch --config config/webpack.config.js",
+    "start": "node dev-server.js"
   },
   "author": "Cynthia",
   "license": "ISC",
@@ -24,6 +25,7 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.1",
     "node-sass": "^5.0.0",
+    "react-hot-loader": "^4.13.0",
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",
     "webpack": "^4.12.0",

@@ -8,7 +8,8 @@ class Counter extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      count: 0
+      count: 0,
+      showText: '热更新文案'
     }
   }
 
@@ -18,6 +19,7 @@ class Counter extends Component {
 
     return (
       <div className="counter">
+        <p>{this.state.showText}</p>
         <Button onClick={() => this.props.onIncrement(count)}>+</Button>
         <div>
           { count }
