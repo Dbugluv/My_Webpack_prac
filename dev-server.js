@@ -1,12 +1,13 @@
 const webpackDevServer = require('webpack-dev-server');
 const webpack = require('webpack');
-// const path = require('path')
+const config = require('./config/webpack.config.js');
 
-const config = require('./webpack.config.js');
 const options = {
   contentBase: './dist',
   hot: true,
   host: 'localhost',
+  publicPath: config.output.publicPath,
+  historyApiFallback: true
 };
 
 webpackDevServer.addDevServerEntrypoints(config, options);

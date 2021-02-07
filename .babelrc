@@ -16,12 +16,13 @@
         "@babel/preset-react"
     ],
     "plugins": [
+        "react-hot-loader/babel",  // webpack.config.json 与此处保留一处即可。
         [
             "@babel/plugin-transform-runtime",  // 支持 es6、7 新api、特性。
             {
                 "corejs": 2, // polyfill 需要使用@babel/runtime-corejs2
                 "useBuildIns": "usage" //按需引入,即用什么新特性打包什么新特性, 可以减小打包的体积
             }
-        ]
+        ],
     ]
 }
