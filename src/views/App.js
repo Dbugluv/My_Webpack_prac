@@ -4,9 +4,9 @@ import './app.scss'
 import * as counterActions from '../actions/counter'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Button } from 'antd';
+import { Button, Image } from 'antd';
 import { hot } from 'react-hot-loader'
-
+import img from '../assets/img.jpg'
 class App extends Component {
 
   constructor(props) {
@@ -20,6 +20,11 @@ class App extends Component {
     this.setState({showText: '更新后的副标题'})
   }
 
+  testFuntion() {
+    
+  }
+
+
   render () {
     const {count} = this.props.stores
     return (
@@ -32,6 +37,11 @@ class App extends Component {
           onDecrement={ () => this.props.counterActions.DECREMENT(count)}
           />
         <Button onClick={() => this.changeSubT()}>更改副标题</Button>
+        <div>
+          测试专用：
+          {this.testFuntion()}
+        </div>
+        <img style={{padding: '10px', width: '500px'}} src={img}/>
       </div>
     )
   }

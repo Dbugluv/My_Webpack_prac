@@ -7,7 +7,7 @@ import { Provider } from 'react-redux'
 import counter from './reducers/counter'  // reducers 
 
 const store = createStore(counter)
-
+console.log('process.env', process.env.NODE_ENV)
 const render = Component => ReactDOM.render( 
     <Provider store={store}>
       <Component />

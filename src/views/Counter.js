@@ -16,7 +16,6 @@ class Counter extends Component {
 
   render () {
     const { count } = this.props.stores
-
     return (
       <div className="counter">
         <Button onClick={() => this.props.onIncrement(count)}>+</Button>
