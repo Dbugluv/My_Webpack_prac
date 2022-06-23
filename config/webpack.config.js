@@ -50,7 +50,7 @@ module.exports = {
   },
   devServer: {
     contentBase: '../dist',  // 告知 dev server，从什么位置查找文件
-    port: 8080,
+    port: 9999,
     hot: true
   },
   resolve: {

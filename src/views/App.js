@@ -4,7 +4,7 @@ import './app.scss'
 import * as counterActions from '../actions/counter'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Button, Image } from 'antd';
+import { Button } from 'antd';
 import { hot } from 'react-hot-loader'
 import img from '../assets/img.jpg'
 class App extends Component {
@@ -29,13 +29,13 @@ class App extends Component {
     const {count} = this.props.stores
     return (
       <div className="app">
-        <h1 className="hello"> My React & Webpack practice</h1>
+        <h1 className="hello"> My React & Webpack .</h1>
         <p>{this.state.showText}</p>
-        <Counter 
+        {/* <Counter 
           count={count}
           onIncrement={ () => this.props.counterActions.INCREMENT(count)} 
           onDecrement={ () => this.props.counterActions.DECREMENT(count)}
-          />
+          /> */}
         <Button onClick={() => this.changeSubT()}>更改副标题</Button>
         <div>
           测试专用：

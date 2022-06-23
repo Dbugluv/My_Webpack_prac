@@ -1,6 +1,10 @@
 .app {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
   text-align: center;
-  
+  background-color: rgb(241, 240, 240);
+  height: 100%;
   .hello {
     color: rgb(58, 47, 209);
     font-weight: bold;
