@@ -11,3 +11,47 @@
     text-align: center;
   }
 }
+
+.father {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-color: gray;
+}
+
+.son {
+  position: absolute;
+  width: 200px;
+  left: 50%;
+  top: 50%;
+  background-color: rgb(211, 146, 178);
+}
+
+
+.img_cover {
+  position: relative;
+  width: 400px;
+  height: 250px;
+  overflow: hidden;
+  
+  button {
+    top: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .left {
+    left: 0;
+  }
+  .right {
+    right: 0;
+  }
+}
+.imgList_wrapper {
+  display: flex;
+}
+.singleImg {
+  width: 400px;
+}
+

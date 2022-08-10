@@ -25,8 +25,16 @@ class Counter extends Component {
         <Button onClick={() => this.props.onDecrement(count)}>-</Button>
         <br />
       </div>
-    );
+    )
   }
+}
+
+function About() {
+  return (
+    <div>
+      <h2>About</h2>
+    </div>
+  );
 }
 
 function mapStateToProps(state) {

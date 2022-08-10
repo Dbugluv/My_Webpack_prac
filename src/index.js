@@ -5,6 +5,8 @@ import 'antd/dist/antd.css'; // 2021/2/2 Q：还有其他方式引入吗？
 import { createStore } from 'redux';
 import { Provider } from 'react-redux'
 import counter from './reducers/counter'  // reducers 
+import RouterTest from './views/RouterTest'
+import Test from './views/Test'
 
 const store = createStore(counter)
 console.log('process.env', process.env.NODE_ENV)
@@ -15,7 +17,7 @@ const render = Component => ReactDOM.render(
   ,
   document.getElementById("app"))
 
-render(App);
+render(Test);
 
 // if (module.hot) {
 //   module.hot.accept('./views/App.js', () => { // 对根项目进行热加载
