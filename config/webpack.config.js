@@ -56,7 +56,8 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.json'],   // 解析文件时可接受的扩展名
     alias: {
-      'SRC': path.join(__dirname, '..', "src")
+      'SRC': path.join(__dirname, '..', "src"),
+      'COMPONENT': path.join(__dirname, '..', 'src/component'),
     }
   },
   devtool: 'inline-source-map', // 可定位出代码错误位置

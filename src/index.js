@@ -17,7 +17,7 @@ const render = Component => ReactDOM.render(
   ,
   document.getElementById("app"))
 
-render(Test);
+render(App);
 
 // if (module.hot) {
 //   module.hot.accept('./views/App.js', () => { // 对根项目进行热加载

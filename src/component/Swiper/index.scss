@@ -1,0 +1,36 @@
+
+.img_cover {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  overflow: hidden;
+  margin: 20px 0;
+  
+  .btn {
+    font-size: 24px;
+    color: white;
+    text-shadow: 2px 2px #bababa85;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .left {
+    left: 10px;
+  }
+  .right {
+    right: 10px;
+  }
+}
+.imgList_wrapper {
+  display: flex;
+}
+.singleImg {
+  width: 400px;
+}
+
