@@ -50,7 +50,7 @@ export default function Swiper(props) {
       if(type === 'left') {
         index--;
         if(index === 0) {
-          imgList_wrapper.style.transition = "0s"
+          imgList_wrapper.style.transition = "0s";
           imgList_wrapper.style.marginLeft = `-${400*(length-1)}px`;
           index = length - 2;
         }

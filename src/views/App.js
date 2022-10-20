@@ -39,7 +39,7 @@ class App extends Component {
     const {count} = this.props.stores
     return (
       <div className="app">
-        <h1 className="hello"> My React & Webpack .</h1>
+        <h1 className="hello"> My React & Webpack.</h1>
         <p>{this.state.showText}</p>
         <Swiper imgArr={mockimg}/>
         {/* <Counter 
